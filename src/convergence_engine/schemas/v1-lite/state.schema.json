@@ -1,0 +1,14 @@
+{
+  "$id": "state",
+  "type": "object",
+  "required": ["run_id", "state_version", "payload", "score", "state_hash"],
+  "properties": {
+    "run_id": { "type": "string" },
+    "state_version": { "type": "integer", "minimum": 0 },
+    "payload": { "type": "object" },
+    "score": { "type": "number" },
+    "state_hash": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

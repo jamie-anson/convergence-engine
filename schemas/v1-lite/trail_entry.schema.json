@@ -1,0 +1,24 @@
+{
+  "$id": "trail_entry",
+  "type": "object",
+  "required": [
+    "trail_id",
+    "proposal_id",
+    "from_state",
+    "to_state"
+  ],
+  "properties": {
+    "trail_id": { "type": "string" },
+    "proposal_id": { "type": "string" },
+    "from_state": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "to_state": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}
+

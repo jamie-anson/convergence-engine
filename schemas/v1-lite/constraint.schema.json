@@ -1,0 +1,28 @@
+{
+  "$id": "constraint",
+  "type": "object",
+  "required": [
+    "constraint_id",
+    "run_id",
+    "field",
+    "operator",
+    "value",
+    "state_version"
+  ],
+  "properties": {
+    "constraint_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "field": { "type": "string" },
+    "operator": {
+      "type": "string",
+      "enum": ["equals", "not_equals", "greater", "less", "invalid"]
+    },
+    "value": {},
+    "state_version": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false
+}
+

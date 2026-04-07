@@ -1,0 +1,33 @@
+{
+  "$id": "proposal",
+  "type": "object",
+  "required": [
+    "proposal_id",
+    "run_id",
+    "based_on_state_version",
+    "mode",
+    "delta_type",
+    "delta"
+  ],
+  "properties": {
+    "proposal_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "based_on_state_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["improve", "explore"]
+    },
+    "delta_type": {
+      "type": "string",
+      "enum": ["patch", "replace"]
+    },
+    "delta": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
+

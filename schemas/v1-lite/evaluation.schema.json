@@ -1,0 +1,47 @@
+{
+  "$id": "evaluation",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "proposal_id",
+    "state_version",
+    "outcome",
+    "score",
+    "reason",
+    "discovered_constraint"
+  ],
+  "properties": {
+    "evaluation_id": { "type": "string" },
+    "proposal_id": { "type": "string" },
+    "state_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "outcome": {
+      "type": "string",
+      "enum": ["accept", "reject_informative", "reject", "stale"]
+    },
+    "score": { "type": "number" },
+    "reason": { "type": "string" },
+    "discovered_constraint": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["field", "operator", "value"],
+          "properties": {
+            "field": { "type": "string" },
+            "operator": {
+              "type": "string",
+              "enum": ["equals", "not_equals", "greater", "less", "invalid"]
+            },
+            "value": {}
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+

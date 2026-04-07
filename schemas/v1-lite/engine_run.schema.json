@@ -1,0 +1,80 @@
+{
+  "$id": "engine_run",
+  "type": "object",
+  "required": [
+    "run_id",
+    "status",
+    "state_version",
+    "best_state_version",
+    "iteration",
+    "max_iterations",
+    "stagnation_mode",
+    "no_improve_count",
+    "acceptance",
+    "stagnation"
+  ],
+  "properties": {
+    "run_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["active", "converged", "halted"]
+    },
+    "state_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "best_state_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "iteration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_iterations": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "stagnation_mode": {
+      "type": "string",
+      "enum": ["local", "exploration", "halted"]
+    },
+    "no_improve_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "acceptance": {
+      "type": "object",
+      "required": [
+        "threshold",
+        "exploration_floor",
+        "allow_equal",
+        "success_threshold"
+      ],
+      "properties": {
+        "threshold": { "type": "number" },
+        "exploration_floor": { "type": "number" },
+        "allow_equal": { "type": "boolean" },
+        "success_threshold": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "stagnation": {
+      "type": "object",
+      "required": ["n1", "n2"],
+      "properties": {
+        "n1": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "n2": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+
