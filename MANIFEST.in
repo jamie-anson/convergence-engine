@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+recursive-include src/convergence_engine/schemas *.json
+recursive-include schemas *.json
+recursive-include docs *.md
+recursive-include examples *.py
+recursive-include specs *.md
+

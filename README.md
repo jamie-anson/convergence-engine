@@ -73,12 +73,12 @@ The package also exposes production-facing helpers for embedders:
 
 ## Package layout
 
-- [src/convergence_engine](/Users/Jammie/Code/Convergence/src/convergence_engine): core library
-- [schemas/v1-lite](/Users/Jammie/Code/Convergence/schemas/v1-lite): machine-readable JSON Schemas
-- [examples/spec_refinement.py](/Users/Jammie/Code/Convergence/examples/spec_refinement.py): simple deterministic example
-- [examples/meeting_orchestrator.py](/Users/Jammie/Code/Convergence/examples/meeting_orchestrator.py): meeting-oriented reference integration
-- [docs/architecture.md](/Users/Jammie/Code/Convergence/docs/architecture.md): roadmap boundaries
-- [specs/convergence-engine-schema-v1-lite.md](/Users/Jammie/Code/Convergence/specs/convergence-engine-schema-v1-lite.md): locked written schema
+- `src/convergence_engine`: core library
+- `schemas/v1-lite`: machine-readable JSON Schemas
+- `examples/spec_refinement.py`: simple deterministic example
+- `examples/meeting_orchestrator.py`: meeting-oriented reference integration
+- `docs/architecture.md`: roadmap boundaries
+- `specs/convergence-engine-schema-v1-lite.md`: locked written schema
 
 ## Quick start
 
@@ -110,4 +110,6 @@ Run the test suite with:
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
-CI is defined in [.github/workflows/ci.yml](/Users/Jammie/Code/Convergence/.github/workflows/ci.yml) and runs the full suite on push and pull request.
+CI is defined in `.github/workflows/ci.yml` and runs the full suite on push and pull request.
+
+The initial release is tracked in `v0.1.0`.
